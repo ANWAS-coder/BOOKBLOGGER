@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BOOKBLOGGER</title>
+</head>
+<body>
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#">LOGO</a>
+            </div>
+    
+            <div class="menu-icon" id="menuIcon" onclick="toggleMenuIcon(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+    
+            <nav id="navParent">
+                <ul class="nav-list">
+                    <li><a href="home.html">หน้าหลัก</a></li>
+                    <li><a href="javascript:void(0);">ประเภท</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="about.html">เกี่ยวกับ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="book-section">
+        <h1>My Favorite Books</h1>
+        <div id="bookList" class="book-list"></div>
+        <button onclick="addBook()">เพิ่มหนังสือใหม่</button>
+    </section>
+    
+    <div id="bookFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2>เพิ่มหรือแก้ไขหนังสือ</h2>
+        
+            <label for="bookTitle">ชื่อหนังสือ:</label>
+            <input type="text" id="bookTitle" placeholder="ชื่อหนังสือ">
+        
+            <label for="bookCoverInput">อัปโหลดหน้าปก:</label>
+            <input type="file" id="bookCoverInput" accept="image/*" onchange="previewCover()">
+            <img id="bookCoverPreview" alt="ตัวอย่างหน้าปก">
+        
+            <label for="bookComment">ความคิดเห็น:</label>
+            <textarea id="bookComment" placeholder="ความคิดเห็นเกี่ยวกับหนังสือ..."></textarea>
+        
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <button onclick="saveBook()" style="background-color: #4CAF50;">บันทึก</button>
+                <button onclick="closeForm()" style="background-color: #f44336;">ยกเลิก</button> 
+            </div>
+        </div>
+    </div>
+
+    
+        
+    <script src="script.js"></script>
+</body>

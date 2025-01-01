@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  
+    @media only screen and (min-width: 800px) {
+        display: none;
+    }
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  
+  body {
+    background-color: #ffffff;
+  
+    .navigation {
+      height: 70px;
+      background-color: #fff;
+  
+    .nav-container {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+  
+    .brand {
+      a {
+        text-decoration: none;
+        color: #333;
+        }
+    }
+  
+    nav {
+      .nav-list {
+        display: flex;
+        list-style: none;
+  
+      li {
+        position: relative;
+        padding: 25px;
+        &:hover {
+          background-color: #eee;
+        }
+  
+        .nav-dropdown {
+          top: 70px;
+          left: 0;
+          position: absolute;
+          z-index: 1;
+          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+          background-color: #fff;
+          list-style: none;
+          display: none;
+  
+          li {
+            margin: 0;
+            min-width: 190px;
+  
+            &:hover {
+              background-color: #f5f5f5;
+            }
+  
+            a {
+              display: inline-block;
+            }
+          }
+        }
+  
+        a {
+          text-decoration: none;
+          color: #333;
+  
+          &:not(:only-child):after {
+            padding-left: 4px;
+            content: ' ▾';
+          }
+        }
+      }
+      }   
+    }
+  
+        @media only screen and (max-width: 640px) {
+          flex-direction: column;
+          height: auto;
+          align-items: start;
+  
+          .brand {
+            padding: 2rem;
+          }
+  
+          nav {
+            width: 100%;
+            display: none;
+  
+            .nav-list {
+              flex-direction: column;
+            }
+          }
+        }
+  
+        @media only screen and (min-width: 640px) {
+          nav {
+            display: block !important;
+          }
+        }
+      }
+  
+      @media only screen and (max-width: 640px) {
+        height: auto;
+      }
+    }
+  }
+  
+  .show {
+    display: block !important;
+  }
+
+    
+.book-section {
+  padding: 20px;
+  text-align: center;
+}
+
+
+.book-list {
+  display: flex; /* ใช้ flexbox */
+  flex-wrap: wrap; /* ให้รายการหนังสือจัดเรียงในหลายแถวหากมีพื้นที่ไม่พอ */
+  justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+  gap: 20px; /* เพิ่มระยะห่างระหว่างรายการ */
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.book-item {
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  max-width: 150px; /* กำหนดความกว้างสูงสุดของแต่ละรายการ */
+}
+
+.book-item:hover {
+  transform: scale(1.05);
+}
+
+.book-item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 50%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+}
+
+
+.modal-content {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"],
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.modal-content textarea {
+  resize: vertical;
+}
+
+.modal-content button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+
+#bookCoverPreview {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  display: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.close {
+  font-size: 20px;
+  color: #333;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.modal-content button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0 5px;
+  flex: 1;
+}
+
+.modal-content button:hover {
+  opacity: 0.9;
+}
+
+.modal-content button[onclick="saveBook()"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-content button[onclick="closeForm()"] {
+  background-color: #f44336;
+  color: white;
+}
+
