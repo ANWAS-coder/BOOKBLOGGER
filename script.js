@@ -41,7 +41,6 @@ menuIcon.addEventListener("click", function() {
 
 let books = [];
 
-// ฟังก์ชันแสดงรายการหนังสือ
 function displayBooks() {
     const bookList = document.getElementById("bookList");
     bookList.innerHTML = "";
@@ -56,7 +55,6 @@ function displayBooks() {
     });
 }
 
-// ฟังก์ชันเปิดฟอร์มเพิ่มหนังสือ
 function addBook() {
     document.getElementById("bookFormModal").style.display = "block";
     document.getElementById("bookTitle").value = "";
@@ -64,7 +62,6 @@ function addBook() {
     document.getElementById("bookComment").value = "";
 }
 
-// ฟังก์ชันแก้ไขข้อมูลหนังสือ
 function editBook(index) {
     document.getElementById("bookFormModal").style.display = "block";
     document.getElementById("bookTitle").value = books[index].title;
@@ -73,7 +70,6 @@ function editBook(index) {
     document.getElementById("bookFormModal").setAttribute("data-edit-index", index);
 }
 
-// ฟังก์ชันบันทึกข้อมูลหนังสือ
 function saveBook() {
     const title = document.getElementById("bookTitle").value;
     const cover = document.getElementById("bookCover").value;
@@ -91,15 +87,12 @@ function saveBook() {
     displayBooks();
 }
 
-// ปิดฟอร์ม
 function closeForm() {
     document.getElementById("bookFormModal").style.display = "none";
 }
 
-// เรียกฟังก์ชันแสดงหนังสือเมื่อโหลดหน้าเว็บ
 window.onload = displayBooks;
 
-// แสดงตัวอย่างหน้าปกหนังสือ
 function previewCover() {
     const file = document.getElementById("bookCoverInput").files[0];
     const preview = document.getElementById("bookCoverPreview");
@@ -116,7 +109,6 @@ function previewCover() {
     }
 }
 
-// ปรับฟังก์ชัน saveBook เพื่อบันทึกไฟล์รูป
 function saveBook() {
     const title = document.getElementById("bookTitle").value;
     const cover = document.getElementById("bookCoverPreview").src;
