@@ -149,16 +149,16 @@
 
 
 .book-list {
-  display: flex; /* ใช้ flexbox */
-  flex-wrap: wrap; /* ให้รายการหนังสือจัดเรียงในหลายแถวหากมีพื้นที่ไม่พอ */
-  justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
-  gap: 20px; /* เพิ่มระยะห่างระหว่างรายการ */
-  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px; 
+  margin-top: 20px; 
 }
 
 .book-item {
-  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-  max-width: 150px; /* กำหนดความกว้างสูงสุดของแต่ละรายการ */
+  text-align: center; 
+  max-width: 150px; 
 }
 
 .book-item:hover {
